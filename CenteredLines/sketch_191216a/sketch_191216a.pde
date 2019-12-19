@@ -1,20 +1,24 @@
-RandomArcs ra;
-CenteredLine cl;
-
+ArrayList<RandomArcs> ra;
+color c;
 void setup() {
   size(600, 600);
   
-  ra = new RandomArcs();
-  cl = new CenteredLine();
+  ra = new ArrayList<RandomArcs>();
+  for(float i = width; i>150; i-=60){
+   ra.add(new RandomArcs(i)); 
+  }
+  
 }
 
 void draw() {
-  background(255);
-  noFill();
-  stroke(0);
-  strokeWeight(0.3f);
+  background(0);
+  //noFill();
+  //stroke(255);
+  strokeWeight(0.4f);
   
-  ra.draw();
-  cl.draw();
+  for(RandomArcs a: ra){
+   a.draw(); 
+  }
+  
   
 }
