@@ -2,16 +2,15 @@ public class Node{
   
   public float x, y;
   public float directionAngle;
-  public float speed = random(0.5, 1.2);
+  public float speed = random(0.1, 0.5);
   public ArrayList<Node> nodes;
-  public int limit = 4;
+  public int limit = 10;
   
   public Node(float x, float y){
     this.x=x;
     this.y=y;
-    directionAngle = random(360);
-    //for more structured movement
-    //directionAngle = 135;
+    //directionAngle = random(360);
+    directionAngle = 90;
     nodes = new ArrayList<Node>();
   }
   
@@ -69,7 +68,7 @@ public class Node{
   
   private void draw(){
     move();
-    circle(x, y, 7);
+    circle(x, y, 3);
     for(Node n: nodes){
       if(isStillClose(n))
         line(x, y, n.x, n.y);
